@@ -1,0 +1,57 @@
+:root { --refund-ink: #0a2550; --refund-muted: #5c6c65; --refund-green: #095bb5; --refund-dark: #073e7a; --refund-soft: #eef5fc; --refund-line: #d9e3ef; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--refund-ink); background: #fff; font-family: "DM Sans", sans-serif; }
+.refund-page { width: min(1160px, calc(100% - 48px)); margin: 0 auto; padding: 58px 0 90px; }
+
+.refund-hero { position: relative; overflow: hidden; padding: 58px 40px; border-radius: 20px; color: #fff; text-align: center; background: linear-gradient(135deg, #095bb5, #073e7a); }
+.refund-hero::before, .refund-hero::after { position: absolute; width: 250px; height: 250px; border: 50px solid rgba(255,255,255,.06); border-radius: 50%; content: ""; }
+.refund-hero::before { left: -110px; top: -130px; }
+.refund-hero::after { right: -100px; bottom: -145px; }
+.refund-hero__icon { position: relative; z-index: 1; display: grid; place-items: center; width: 48px; height: 48px; margin: 0 auto 15px; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: rgba(255,255,255,.1); }
+.refund-hero__icon svg { width: 24px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.refund-hero > span { position: relative; z-index: 1; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.refund-hero h1 { position: relative; z-index: 1; margin: 8px 0 12px; font-family: "Playfair Display", serif; font-size: clamp(42px, 5vw, 62px); line-height: 1.1; }
+.refund-hero p { position: relative; z-index: 1; margin: 0 0 11px; color: rgba(255,255,255,.84); font-size: 16px; }
+.refund-hero time { position: relative; z-index: 1; color: rgba(255,255,255,.65); font-size: 12px; }
+
+.policy-highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: -1px 28px 52px; padding: 24px; border: 1px solid var(--refund-line); border-top: 0; border-radius: 0 0 16px 16px; background: #fff; box-shadow: 0 14px 35px rgba(16,37,31,.06); }
+.policy-highlights article { padding: 8px 18px; border-right: 1px solid var(--refund-line); }
+.policy-highlights article:last-child { border-right: 0; }
+.policy-highlights strong { display: block; margin-bottom: 5px; color: var(--refund-green); font-size: 14px; }
+.policy-highlights p { margin: 0; color: var(--refund-muted); font-size: 12px; line-height: 1.55; }
+
+.refund-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 55px; align-items: start; }
+.refund-content { color: #3f4d47; font-size: 15px; line-height: 1.8; }
+.refund-intro { margin: 0 0 38px; color: #29496f; font-size: 17px; line-height: 1.75; }
+.refund-content section { padding: 0 0 30px; margin-bottom: 31px; border-bottom: 1px solid var(--refund-line); }
+.refund-content section:last-child { border-bottom: 0; }
+.refund-content h2 { display: flex; gap: 13px; align-items: baseline; margin: 0 0 10px; color: var(--refund-ink); font-family: "Playfair Display", serif; font-size: 27px; line-height: 1.3; }
+.refund-content h2 span { min-width: 27px; color: var(--refund-green); font-family: "DM Sans", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+.refund-content p { margin: 0; }
+.refund-content a { color: var(--refund-green); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.eligible-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.eligible-list span { padding: 7px 11px; border-radius: 50px; color: var(--refund-green); background: var(--refund-soft); font-size: 12px; font-weight: 700; }
+
+.refund-help { position: sticky; top: 110px; padding: 32px 28px; border-radius: 16px; color: #fff; background: linear-gradient(145deg, #095bb5, #073e7a); }
+.refund-help > span { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.refund-help h2 { margin: 9px 0; font-family: "Playfair Display", serif; font-size: 29px; }
+.refund-help p { margin: 0 0 22px; color: rgba(255,255,255,.78); font-size: 13px; line-height: 1.65; }
+.refund-help a { display: inline-flex; gap: 9px; padding: 11px 17px; border-radius: 50px; color: var(--refund-green); background: #fff; font-size: 12px; font-weight: 700; }
+.refund-help a span { transition: transform .2s ease; }
+.refund-help a:hover span { transform: translateX(3px); }
+
+@media (max-width: 900px) {
+    .refund-layout { grid-template-columns: 1fr; }
+    .refund-help { position: static; }
+}
+@media (max-width: 720px) {
+    .refund-page { width: min(100% - 30px, 1160px); padding: 32px 0 65px; }
+    .refund-hero { padding: 45px 20px; }
+    .refund-hero p { font-size: 14px; }
+    .policy-highlights { grid-template-columns: 1fr; margin: -1px 10px 40px; padding: 14px 20px; }
+    .policy-highlights article { padding: 12px 0; border-right: 0; border-bottom: 1px solid var(--refund-line); }
+    .policy-highlights article:last-child { border-bottom: 0; }
+    .refund-content { font-size: 14px; }
+    .refund-content h2 { gap: 9px; font-size: 23px; }
+    .refund-intro { font-size: 15px; }
+}
